@@ -1,5 +1,5 @@
 ## 📜Entry Submission Requirements 
-All teams are required to submit the following as part of their entry submission no later than the end of the Hackathon on Saturday March 8th 2025 at 8PM EST. Where using Sitecore XM, the submitted entries shall be based on [**Sitecore 10.4 XM**](https://developers.sitecore.com/downloads/Sitecore_Experience_Platform/104/Sitecore_Experience_Platform_104).
+All teams are required to submit the following as part of their entry submission no later than the end of the Hackathon on Saturday, March 7th, 2026, at 8 PM EST. Where using Sitecore XM, the submitted entries shall be based on [**Sitecore 10.4 XM**](https://developers.sitecore.com/downloads/Sitecore_Experience_Platform/104/Sitecore_Experience_Platform_104).
 
 ### IMPORTANT  👀
 > You have to fill in the README.md file found in this repository. Copy in the content of 
