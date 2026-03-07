@@ -177,12 +177,19 @@ v
 ### Notes for Judges
 
 l. No local Python setup is required for evaluation.
+
 2. The AI service is already hosted publicly.
+
 3. Judges only need:
+
 4. Sitecore environment
+
 5. Sitecore PowerShell Extensions
+
 6. the provided PowerShell script
+
 7. the hosted API URL
+
 8. This keeps setup simple and avoids unnecessary installation complexity.
 
 ### Future Enhancements
