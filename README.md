@@ -17,7 +17,6 @@ having latest 5 version and author or marketer want to check the content score o
 and RTE and then fetch output from Python Application (.exe) and displayed on the SPE output in terms of score, readability and suggestion etc. 
 
 
-_You can alternately paste a [link here](#docs) to a document within this repo containing the description._
 
 ## Video link
 ⟹ Provide a video highlighing your Hackathon module submission and provide a link to the video. You can use any video hosting, file share or even upload the video to this repository. _Just remember to update the link below_
@@ -28,14 +27,14 @@ _You can alternately paste a [link here](#docs) to a document within this repo c
 	
 ⟹ This module can use any sitecore architechure like XP/XM or XM cloud. We have used XM cloud - Starter project - https://github.com/Sitecore/xmcloud-starter-js with docker cli.
 
-	Dependencies in the XM cloud  
+	Dependencies in the XM cloud: 
    a) Clone the repo - https://github.com/Sitecore-Hackathon/2026-JMD.git	  
    b) Make ensure that sitecore powershell extension installed with setting SITECORE_SPE_ELEVATION: "Allow" should be written in the docker-compose.override.yml file if local setup going on
    or added in the environment setting of cm and then redeploy.
    c) Docker desktop or docker cli should be installed on local if checking on locally.
    
 
-   Dependencies in the Python Application
+   Dependencies in the Python Application:
    a) Open AI- Create a API key of open ai. https://platform.openai.com/api-keys
    b) Install the framework into Python Application
 	dotenv, SequenceMatcher ,BeautifulSoup, OpenAI 
@@ -61,28 +60,10 @@ Commands:
 After compiled and convert into PythonApplication1.exe redeploy xm cloud.
 
 
-> _A simple well-described installation process is required to win the Hackathon._  
-> Feel free to use any of the following tools/formats as part of the installation:
-> - Sitecore Package files
-> - Docker image builds
-> - Sitecore CLI
-> - msbuild
-> - npm / yarn
-> 
-> _Do not use_
-> - TDS
-> - Unicorn
- 
-for example:
-
-1. Use the Sitecore Installation wizard to install the [package](#link-to-package)
-2. ...
-3. profit
-
 ### Configuration
-⟹ If there are any custom configuration that has to be set manually then remember to add all details here.
+⟹ a) Remember to add OPENAPI_KEY into environment variable.
+   b) Remember to install the SPE module of check Contet Analyer 
 
-_Remove this subsection if your entry does not require any configuration that is not fully covered in the installation instructions already_
 
 ## Usage instructions
 ⟹ Provide documentation about your module, how do the users use your module, where are things located, what do the icons mean, are there any secret shortcuts etc.
