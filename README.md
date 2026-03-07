@@ -14,7 +14,7 @@
 ⟹ This project explained how we can use the Sitecore Powershell Extension with integration of Open AI using Python. 
 ⟹ Purpose: This module helps the author and marketer to checking the context fields content - score, textstat, compare and sentiment with the help open ai before to make it live. Suppose context item
 having latest 5 version and author or marketer want to check the content score of latest version which is 5 with previous version 4. This module sends/pass the all the content of Type Single-Line, Multiline
-and RTE and then fetch output from Python Application (.exe) and displayed on the SPE output in terms of score, readability and suggestion etc. 
+and RTE and then fetch output from Python file (.py) and displayed on the SPE output in terms of score, readability and suggestion etc. 
 
 
 
@@ -32,6 +32,7 @@ and RTE and then fetch output from Python Application (.exe) and displayed on th
    b) Make ensure that sitecore powershell extension installed with setting SITECORE_SPE_ELEVATION: "Allow" should be written in the docker-compose.override.yml file if local setup going on
    or added in the environment setting of cm and then redeploy.
    c) Docker desktop or docker cli should be installed on local if checking on locally.
+   d) Open API Key should be create and configure on the deploy portal and .env file
    
 
    Dependencies in the Python Application:
@@ -49,21 +50,24 @@ Commands:
 
 ⟹ Steps on Python Application:
 3) Source Code - \src\Python\PythonApplication1
-4) Make ensure that "\authoring\platform\output" contains the output compiled file of (PythonApplication1.exe) application. XM Cloud Starter Code - https://github.com/Sitecore/xmcloud-starter-js
+4) Copy the Python Source code "\src\" into the xm starter project under root node. Add the python project reference of "PythonApplication1.pyproj" into the XmCloudAuthoring.sln solution of xm cloud. 
+The push the changes of solution in the repo.
+5) Make ensure that "\authoring\platform\output" contains the output compiled file of (PythonApplication1.exe) application. XM Cloud Starter Code - https://github.com/Sitecore/xmcloud-starter-js
   NOTE - output directory need to create.
-5) Rename .env.example to .env file on local and add the Open API key.  If del
-5) After ran the below command and then copy paste the .exe into xm cloud platform \authoring\platform\output
+6) Rename .env.example to .env file on local and update the OPENAI_API_KEY value. Also add the same environment setting on the deploy portal.
+7) Once build and deployment started of Python Application, it will create a build into xm starter platform inside "\authoring\platform\output" location  After ran the below command and then copy paste the PythonApplication1.py (python file) into xm cloud platform \authoring\platform\output
    Commands:
     => pyinstaller --onefile PythonApplication1.py
-	  (compiled and convert the PythonApplication1.py into .exe into /dist folder)	
+	  (compiled and convert the PythonApplication1.py into .exe into /dist folder)
 
-After compiled and convert into PythonApplication1.exe redeploy xm cloud.
+8) Once deployment done you can install the sitecore SPE package of Analyser which included powershell script to execute the PythonApplication1.py on the context item.	  
 
 
 ### Configuration
-⟹ a) Remember to add OPENAPI_KEY into environment variable.
+⟹ a) Remember to add OPENAI_API_KEY into environment variable.
    b) Remember to install the SPE module of check Contet Analyer 
 
 
 ## Usage instructions
-⟹ Provide documentation about your module, how do the users use your module, where are things located, what do the icons mean, are there any secret shortcuts etc.
+⟹ This module help the author and marketer to increase the lead and save the content which is more appropriate for lead generation with the help of open ai. Also it help to do such a kind of a/b testing
+of content of two versions of item.
