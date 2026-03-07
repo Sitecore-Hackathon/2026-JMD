@@ -53,39 +53,62 @@ The results are displayed in Sitecore PowerShell output as a structured grid, al
 ## How to use :Open a Sitecore item containing text fields such as:
 
 l Title
+
 2 Rich Text
+
 3 Multi-Line Text
+
 4 Run the AI Content Analyzer PowerShell script.
 
 ### The script will:
 
 l fetch current values
+
 2 fetch previous version values
+
 3 skip fields where both values are empty
+
 4 call the hosted AI service
+
 5 display results in a single Sitecore grid
+
 
 ### Review the results:
 
 l Field Engagement
+
 2 Field SEO
+
 3 Field Sentiment
+
 4 SEO Suggestions
+
 5 Content Suggestions
+
 
 ## Expected Output
 
-l The final analysis grid shows:
-2 Item Name
-3 Field Name
-4 Current Value
-5 Previous Value
-6 Field Engagement
-7 Field SEO
-8 Field Sentiment
-9 SEO Suggestions
-l0 Content Suggestions
-l1 This gives authors field-level insights directly inside Sitecore
+ The final analysis grid shows:
+
+1 Item Name
+
+2 Field Name
+
+3 Current Value
+
+4 Previous Value
+
+5 Field Engagement
+
+6 Field SEO
+
+7 Field Sentiment
+
+8 SEO Suggestions
+
+9 Content Suggestions
+
+l0 This gives authors field-level insights directly inside Sitecore
 
 
 ## Pre-requisites and Dependencies
@@ -106,7 +129,9 @@ l1 This gives authors field-level insights directly inside Sitecore
 ⟹ Steps for setup XM cloud Cloud:
 
 1) Use an existing Sitecore environment where Sitecore PowerShell Extensions is available. This project does not require judges to run Python locally because the AI service is already hosted publicly.
-2) Import or add the Sitecore Package Provided Add the provided PowerShell script into Sitecore PowerShell ISE / Script Library.
+
+2) Install Sitecore package "Sitecore Content AI analyzer.zip" from path "\src\Sitecore Package\" and install it. 
+ Then add the provided PowerShell script into Sitecore PowerShell ISE / Script Library.
 
 The script: 
 - reads the current item 
