@@ -13,9 +13,9 @@
 
 ## Description
 
-⟹ This project explained how we can use the Sitecore Powershell Extension with integration of Open AI using Python. 
+⟹ This project explained how we can use the Sitecore Powershell Extension with integration of GPT-4.0 using Python. 
 
-⟹ Purpose: This module helps the author and marketer to checking the context fields content - Field engagement, Field SEO, Field Sentiment, SEO Suggestion and Content Suggestion with the help open ai before to make it live. Suppose context item
+⟹ Purpose: This module helps the author and marketer to checking the context fields content - Field engagement, Field SEO, Field Sentiment, SEO Suggestion and Content Suggestion with the help GPT-4.0 before to make it live. Suppose context item
 having latest 5 version and author or marketer want to check the content score of latest version which is 5 with previous version 4. This module sends/pass the all the content of Type Single-Line, Multiline
 and RTE and then fetch output from Python file (.py) and displayed on the SPE output in terms of score, readability and suggestion etc. 
 
@@ -84,7 +84,7 @@ b) Remember to install the SPE module (sitecore package) of check Content Analye
 
 
 ## Usage instructions
-⟹ This module help the author and marketer to increase the lead and save the content which is more appropriate for lead generation with the help of open ai. Also it help to do such a kind of a/b testing
+⟹ This module help the author and marketer to increase the lead and save the content which is more appropriate for lead generation with the help of GPT-4.0. Also it help to do such a kind of a/b testing
 of content of two versions of item.
 
 Include screenshots where necessary. You can add images to the `./images` folder and then link to them from your documentation:
