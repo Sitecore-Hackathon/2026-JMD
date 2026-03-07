@@ -9,7 +9,7 @@
 
 ## Category
 
-⟹ 2.	2. Applied AI Within the Sitecore Execution Pipeline
+⟹ 2.Applied AI Within the Sitecore Execution Pipeline
 
 ## Description
 
@@ -57,14 +57,16 @@ l Title
 3 Multi-Line Text
 4 Run the AI Content Analyzer PowerShell script.
 
-## The script will:
+### The script will:
+
 l fetch current values
 2 fetch previous version values
 3 skip fields where both values are empty
 4 call the hosted AI service
-4 display results in a single Sitecore grid
+5 display results in a single Sitecore grid
 
-## Review the results:
+### Review the results:
+
 l Field Engagement
 2 Field SEO
 3 Field Sentiment
