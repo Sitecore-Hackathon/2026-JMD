@@ -9,85 +9,172 @@
 
 ## Category
 
-⟹ 2.	Applied AI Within the Sitecore Execution Pipeline - Demonstrate how AI can be embedded within Sitecore execution flows to improve quality, governance, personalization, or performance.
+⟹ 2.	2. Applied AI Within the Sitecore Execution Pipeline
 
 ## Description
 
-⟹ This project explained how we can use the Sitecore Powershell Extension with integration of GPT-4.0 using Python. 
+⟹ This project demonstrates how AI can be integrated into the Sitecore authoring workflow using Sitecore PowerShell Extensions (SPE) and OpenAI through a Python service. 
 
-⟹ Purpose: This module helps the author and marketer to checking the context fields content - Field engagement, Field SEO, Field Sentiment, SEO Suggestion and Content Suggestion with the help GPT-4.0 before to make it live. Suppose context item
-having latest 5 version and author or marketer want to check the content score of latest version which is 5 with previous version 4. This module sends/pass the all the content of Type Single-Line, Multiline
-and RTE and then fetch output from Python file (.py) and displayed on the SPE output in terms of score, readability and suggestion etc. 
+⟹ Purpose: The solution allows content authors and marketers to analyze the quality of their content before publishing it live.
 
+The module evaluates Sitecore content fields such as:
+- Single-Line Text
+- Multi-Line Text
+- Rich Text (RTE)
+
+The system performs AI-based analysis including:
+- Engagement score
+- SEO score
+- Sentiment analysis
+- Version comparison
+- AI suggestions for improvement
+
+Example Scenario
+If a Sitecore item has multiple versions, the author may want to compare:
+Version 5 (current)
+Version 4 (previous)
+
+
+The module collects content from both versions and sends it to the Python AI analysis service.
+
+The AI then analyzes the content and returns results including:
+- Field-level engagement score
+- Field-level SEO score
+- Field-level sentiment
+- SEO improvement suggestions
+- Content quality suggestions
+
+The results are displayed in Sitecore PowerShell output as a structured grid, allowing authors to immediately evaluate and improve content quality.
 
 
 ## Video link
-⟹ Provide a video highlighing your Hackathon module submission and provide a link to the video. You can use any video hosting, file share or even upload the video to this repository. _Just remember to update the link below_
+⟹ https://www.youtube.com/watch?v=GFrXf7qifJw
 
-⟹ [Replace this Video link](#video-link)
+## How to use :Open a Sitecore item containing text fields such as:
+
+l Title
+2 Rich Text
+3 Multi-Line Text
+4 Run the AI Content Analyzer PowerShell script.
+
+## The script will:
+l fetch current values
+2 fetch previous version values
+3 skip fields where both values are empty
+4 call the hosted AI service
+4 display results in a single Sitecore grid
+
+## Review the results:
+l Field Engagement
+2 Field SEO
+3 Field Sentiment
+4 SEO Suggestions
+5 Content Suggestions
+
+## Expected Output
+
+l The final analysis grid shows:
+2 Item Name
+3 Field Name
+4 Current Value
+5 Previous Value
+6 Field Engagement
+7 Field SEO
+8 Field Sentiment
+9 SEO Suggestions
+l0 Content Suggestions
+l1 This gives authors field-level insights directly inside Sitecore
+
 
 ## Pre-requisites and Dependencies
 	
-⟹ This module can use any sitecore architechure like XP/XM or XM cloud. We have used XM cloud - Starter project - https://github.com/Sitecore/xmcloud-starter-js with docker cli.
+⟹ Sitecore XM Cloud - Installed starter kit
+- Sitecore PowerShell Extensions installed - Access to content items with versioned text fields
 
-Dependencies in the XM cloud: 
+⟹ Hosted AI API
+- The solution uses a Python FastAPI service that performs AI analysis. API KEY - https://content-analyzer-api.onrender.com/analyze API KEY Health - https://content-analyzer-api.onrender.com/health
 
-   a) Clone the repo - https://github.com/Sitecore-Hackathon/2026-JMD.git	  
-   b) Make ensure that sitecore powershell extension installed with setting SITECORE_SPE_ELEVATION: "Allow" should be written in the docker-compose.override.yml file if local setup going on
-   or added in the environment setting of cm and then redeploy.
-   c) Docker desktop or docker cli should be installed on local if checking on locally.
-   d) Open API Key should be create and configure on the deploy portal and .env file
-   
+### External dependencies 
 
-Dependencies in the Python Application:
-
-   a) Open AI- Create a API key of open ai. https://platform.openai.com/api-keys
-   b) Install the framework into Python Application
-	dotenv, SequenceMatcher ,BeautifulSoup, OpenAI 
-
+  - OpenAI API is used by the hosted Python service 
+  - Render is used for API hosting
+    
 
 ## Installation instructions
 ⟹ Steps for setup XM cloud Cloud:
 
-1) Install the sitecore XP/XM or XM cloud on local or on cloud.
+1) Use an existing Sitecore environment where Sitecore PowerShell Extensions is available. This project does not require judges to run Python locally because the AI service is already hosted publicly.
+2) Import or add the Sitecore Package Provided Add the provided PowerShell script into Sitecore PowerShell ISE / Script Library.
 
-2) Make ensure that SITECORE_SPE_ELEVATION: "Allow" should be exist before setup.
-Commands:
-
-NOTE - This repository doesnt pushed the xm cloud started code ie "https://github.com/Sitecore/xmcloud-starter-js". Only included the Python Application.
+The script: 
+- reads the current item 
+- reads the previous version 
+- identifies analyzable fields 
+- sends content to the hosted AI API 
+- displays the analysis in a single grid
   
 
-⟹ Steps for setup Python Application:
+3) Update the script
+Go to powershell ISE module --> Settings Tab --> Run script of content editor for ribbon
 
-3) Source Code - "\src\Python\PythonApplication1"
+4) Go to Content Editor and Content Analyzer button would be available. Go to any item and click to know the scores and suggestions.
 
-4) Copy the Python Source code "\src\" into the xm starter project under root node. Add the python project reference of "PythonApplication1.pyproj" into the XmCloudAuthoring.sln solution of xm cloud. 
-The push the changes of solution in the repo.
+5) Output - This helps authors quickly identify weak content and improve it before publishing.
 
-5) Make ensure that "\authoring\platform\output" contains the output compiled file of (main.py) application. XM Cloud Starter Code - https://github.com/Sitecore/xmcloud-starter-js
-  NOTE - output directory need to create.
-  
-6) Rename .env.example to .env file on local and update the OPENAI_API_KEY value. Also add the same environment setting on the deploy portal.
+Architecture
 
-7) Once build and deployment started of Python Application, it will create a build into xm starter platform inside "\authoring\platform\output" location  After ran the below command and then copy paste the main.py (python file) into xm cloud platform \authoring\platform\output
-   Commands:
-    => pyinstaller --onefile main.py
-	  (compiled and deploy the main.py into /dist folder)
+Sitecore Authoring
 
-8) Once deployment done you can install the sitecore SPE package of Analyser which included powershell script to execute the main.py on the context item.	  
+|
 
+| Sitecore PowerShell Script
+
+v
+
+Hosted FastAPI AI Service
+
+|
+
+v
+
+## Flow
+
+1. Author runs the script from Sitecore
+2. Script collects current and previous values
+3. Content is sent to the hosted AI API
+4. AI analyzes the content
+5. Structured results are returned
+6. Results are shown in Sitecore
+
+
+### Notes for Judges
+
+l No local Python setup is required for evaluation.
+2 The AI service is already hosted publicly.
+3 Judges only need:
+4 Sitecore environment
+5 Sitecore PowerShell Extensions
+6 the provided PowerShell script
+7 the hosted API URL
+8 This keeps setup simple and avoids unnecessary installation complexity.
+
+### Future Enhancements
+1 Possible future improvements include:
+2 Page-level analysis across renderings/components
+3 Readability scoring
+4 Keyword density analysis
+5 AI-assisted rewrite suggestions
+6 Editorial workflow gating
+7 Marketplace packaging
 
 ### Configuration
 ⟹ 
-a) Remember to add OPENAI_API_KEY into environment variable.
-b) Remember to install the SPE module (sitecore package) of check Content Analyer 
-
 
 ## Usage instructions
 ⟹ This module help the author and marketer to increase the lead and save the content which is more appropriate for lead generation with the help of GPT-4.0. Also it help to do such a kind of a/b testing
 of content of two versions of item.
 
-Include screenshots where necessary. You can add images to the `./images` folder and then link to them from your documentation:
+
 
 ![Hackathon Logo](docs/images/hackathon.png?raw=true "Hackathon Logo")
 
@@ -100,4 +187,4 @@ And you can embed external images too:
 ![Random](https://thiscatdoesnotexist.com/)
 
 ## Comments
-If you'd like to make additional comments that is important for your module entry.
+This project was built for Sitecore Hackathon 2026 to demonstrate practical AI integration inside the Sitecore execution pipeline.
