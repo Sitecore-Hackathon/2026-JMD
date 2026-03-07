@@ -176,23 +176,24 @@ v
 
 ### Notes for Judges
 
-l No local Python setup is required for evaluation.
-2 The AI service is already hosted publicly.
-3 Judges only need:
-4 Sitecore environment
-5 Sitecore PowerShell Extensions
-6 the provided PowerShell script
-7 the hosted API URL
-8 This keeps setup simple and avoids unnecessary installation complexity.
+l. No local Python setup is required for evaluation.
+2. The AI service is already hosted publicly.
+3. Judges only need:
+4. Sitecore environment
+5. Sitecore PowerShell Extensions
+6. the provided PowerShell script
+7. the hosted API URL
+8. This keeps setup simple and avoids unnecessary installation complexity.
 
 ### Future Enhancements
-1 Possible future improvements include:
-2 Page-level analysis across renderings/components
-3 Readability scoring
-4 Keyword density analysis
-5 AI-assisted rewrite suggestions
-6 Editorial workflow gating
-7 Marketplace packaging
+
+1. Possible future improvements include:
+2. Page-level analysis across renderings/components
+3. Readability scoring
+4. Keyword density analysis
+5. AI-assisted rewrite suggestions
+6. Editorial workflow gating
+7. Marketplace packaging
 
 ### Configuration
 ⟹ 
