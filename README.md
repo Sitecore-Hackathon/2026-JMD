@@ -53,6 +53,8 @@ Dependencies in the Python Application:
 
 2) Make ensure that SITECORE_SPE_ELEVATION: "Allow" should be exist before setup.
 Commands:
+
+NOTE - This repository doesnt pushed the xm cloud started code ie "https://github.com/Sitecore/xmcloud-starter-js". Only included the Python Application.
   
 
 ⟹ Steps for setup Python Application:
@@ -84,3 +86,18 @@ b) Remember to install the SPE module (sitecore package) of check Content Analye
 ## Usage instructions
 ⟹ This module help the author and marketer to increase the lead and save the content which is more appropriate for lead generation with the help of open ai. Also it help to do such a kind of a/b testing
 of content of two versions of item.
+
+Include screenshots where necessary. You can add images to the `./images` folder and then link to them from your documentation:
+
+![Hackathon Logo](docs/images/hackathon.png?raw=true "Hackathon Logo")
+
+You can embed images of different formats too:
+
+![Deal With It](docs/images/deal-with-it.gif?raw=true "Deal With It")
+
+And you can embed external images too:
+
+![Random](https://thiscatdoesnotexist.com/)
+
+## Comments
+If you'd like to make additional comments that is important for your module entry.
